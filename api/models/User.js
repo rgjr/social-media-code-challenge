@@ -1,7 +1,7 @@
 const Mariadb = require('mariadb')
 const bcryptService = require('../services/bcrypt.service')
 
-const mariadb = require('../../config/database')
+// const mariadb = require('../../config/database')
 
 const hooks = {
   beforeCreate(user) {
