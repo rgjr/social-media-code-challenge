@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejs
+    container_name: nodejs
+    volumes:
+      - .:/api
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: development
+      DEBUG: nodejs-docker-express:*
+    command: yarn nodemon
+  db:
+    image: mariadb
+    container_name: mariadb
+    volumes:
+      - './db/initialize.sql:/docker-entrypoint-initdb.d/init.sql'
+    ports:
+      - '3306:3306'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: upkeep
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root

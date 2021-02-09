@@ -1,0 +1,15 @@
+FROM node as base
+
+WORKDIR /api
+COPY package*.json /
+EXPOSE 3000
+
+FROM base as dev
+ENV NODE_ENV=development
+RUN yarn install
+COPY . /
+CMD ["nodemon", "bin/www"]
+
+FROM mysql
+
+RUN usermod -u 1000 mysql
