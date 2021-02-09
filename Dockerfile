@@ -9,7 +9,3 @@ ENV NODE_ENV=development
 RUN yarn install
 COPY . /
 CMD ["nodemon", "bin/www"]
-
-FROM mysql
-
-RUN usermod -u 1000 mysql
