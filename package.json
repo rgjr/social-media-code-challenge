@@ -12,22 +12,17 @@
     "url": "https://github.com/aichbauer/express-rest-api-boilerplate/issues"
   },
   "scripts": {
-    "create-sqlite-db": "shx touch ./db/database.sqlite",
-    "dev": "cross-env NODE_ENV=development node ./dist/api/api.js",
-    "drop-sqlite-db": "shx rm ./db/database.sqlite",
+    "dev": "node ./dist/api/api.js",
     "lint": "eslint ./api/. ./config/. ./test/.",
-    "nodemon": "nodemon --exec npm babel-node -- ./api/api.js",
-    "poststart": "npm run create-sqlite-db",
+    "nodemon": "nodemon --watch dist --exec npm run dev ; yarn transpile",
     "prepush": "npm test",
-    "prestart": "npm run drop-sqlite-db || true",
     "pretest": "npm run lint",
-    "production": "cross-env NODE_ENV=production node ./api/api.js",
     "start": "npm run nodemon",
     "test": "npm run create-sqlite-db; cross-env NODE_ENV=testing jest --coverage; npm run drop-sqlite-db",
     "test-ci": "jest --coverage --forceExit",
     "transpile-api": "babel ./api --out-dir dist/api",
     "transpile-config": "babel ./config --out-dir dist/config",
-    "transpile": "npm run transpile-api && yarn transpile-config"
+    "transpile": "echo \"\\x1b[104m\\x1b[97m\n[ Running transpile ]\n\\x1b[0m\" ; npm run transpile-api ; npm run transpile-config"
   },
   "jest": {
     "globals": {
@@ -50,6 +45,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-routes-mapper": "^1.0.2",
+    "global": "^4.4.0",
     "helmet": "^3.12.0",
     "jsonwebtoken": "^8.2.1",
     "mariadb": "^2.5.2",
@@ -68,7 +64,7 @@
     "eslint-plugin-import": "^2.22.1",
     "husky": "^0.14.3",
     "jest": "^24.8.0",
-    "nodemon": "^1.17.3",
+    "nodemon": "^2.0.7",
     "shx": "^0.2.2",
     "supertest": "^3.0.0"
   }

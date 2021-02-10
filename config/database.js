@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize'
 import connection from './connection'
-import User from '../api/models/User'
+import UserModel from '../api/models/User'
 
 const {
   host,
@@ -18,12 +18,13 @@ const sequelize = new Sequelize(database, username, password, {
   connectionLimit
 })
 
+const users = UserModel(sequelize, Sequelize)
+
 const db = {
   Sequelize,
-  sequelize
+  sequelize,
+  users
 }
-
-db.User = User(sequelize, Sequelize)
 
 export const dbTest = async () => {
   try {

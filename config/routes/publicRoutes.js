@@ -1,19 +1,23 @@
 import { Router } from 'express'
-import User from '../../api/models/User'
+
+const users = require('../../api/controllers/UserController')
 
 const publicRoutes = Router()
 
 publicRoutes.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('UpKeep Demo v1')
 })
 
 // Retrieve all users
-publicRoutes.get('/users', (req, res) => {
-  const result = User.findall
+publicRoutes.get('/users', users.findAll)
 
-  console.log(result)
+// Retrieve single user
+publicRoutes.get('/users/:id', users.findOne)
 
-  res.send(result)
-})
+// Retrieve users and their friends
+publicRoutes.get('/users/friends', users.findFriends)
+
+// Retrieve single user and their friends
+publicRoutes.get('/users/:id/friends', users.findUserFriends)
 
 export default publicRoutes

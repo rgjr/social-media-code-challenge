@@ -8,4 +8,4 @@ FROM base as dev
 ENV NODE_ENV=development
 RUN yarn install
 COPY . /
-CMD ["nodemon", "bin/www"]
+CMD ["yarn", "start"]

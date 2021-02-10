@@ -14,7 +14,7 @@ services:
     environment:
       NODE_ENV: development
       DEBUG: nodejs-docker-express:*
-    command: yarn nodemon
+    command: yarn start
   db:
     image: mariadb
     container_name: mariadb
