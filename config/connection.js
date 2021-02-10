@@ -1,33 +1,33 @@
-const development = {
+const dev = {
+  host: 'db',
+  user: 'user',
+  password: 'root',
+  connectionLimit: 5,
+  database: 'upkeep',
+  username: 'user',
+  dialect: 'mariadb'
+}
+
+const test = {
   host: 'localhost',
   user: 'user',
   password: 'root',
   connectionLimit: 5,
   database: 'upkeep',
   username: 'user',
-  dialect: 'mysql'
+  dialect: 'mariadb'
 }
 
-const testing = {
-  host: 'localhost',
-  user: 'user',
-  password: 'root',
-  connectionLimit: 5,
-  database: 'upkeep',
-  username: 'user',
-  dialect: 'mysql'
-}
-
-const production = {
+const prod = {
   database: process.env.DB_NAME,
   username: process.env.DB_USER,
   password: process.env.DB_PASS,
   host: process.env.DB_HOST || 'localhost',
-  dialect: 'mysql'
+  dialect: 'mariadb'
 }
 
 module.exports = {
-  development,
-  testing,
-  production
+  dev,
+  test,
+  prod
 }

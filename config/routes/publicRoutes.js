@@ -1,8 +1,19 @@
-const publicRoutes = {
-  'POST /user': 'UserController.register',
-  'POST /register': 'UserController.register', // alias for POST /user
-  'POST /login': 'UserController.login',
-  'POST /validate': 'UserController.validate'
-}
+import { Router } from 'express'
+import User from '../../api/models/User'
 
-module.exports = publicRoutes
+const publicRoutes = Router()
+
+publicRoutes.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+// Retrieve all users
+publicRoutes.get('/users', (req, res) => {
+  const result = User.findall
+
+  console.log(result)
+
+  res.send(result)
+})
+
+export default publicRoutes

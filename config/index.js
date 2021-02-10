@@ -1,11 +1,11 @@
-const privateRoutes = require('./routes/privateRoutes')
-const publicRoutes = require('./routes/publicRoutes')
+import publicRoutes from './routes/publicRoutes'
+import privateRoutes from './routes/privateRoutes'
 
 const config = {
   migrate: false,
   privateRoutes,
   publicRoutes,
-  port: process.env.PORT || '2017'
+  port: process.env.PORT || '3000'
 }
 
-module.exports = config
+export default config

@@ -49,4 +49,116 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-02-08 18:34:17
+--
+-- TABLE STRUCTURE FOR: friends
+--
+
+DROP TABLE IF EXISTS `friends`;
+
+CREATE TABLE `friends` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `friend_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (1, 66, 22);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (2, 27, 43);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (3, 64, 77);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (4, 78, 27);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (5, 100, 46);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (6, 94, 7);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (7, 34, 55);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (8, 31, 23);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (9, 2, 33);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (10, 66, 28);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (11, 41, 63);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (12, 53, 53);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (13, 30, 47);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (14, 84, 29);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (15, 39, 45);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (16, 98, 51);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (17, 62, 82);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (18, 33, 89);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (19, 60, 71);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (20, 28, 2);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (21, 92, 34);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (22, 87, 26);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (23, 1, 84);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (24, 48, 59);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (25, 18, 13);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (26, 64, 77);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (27, 25, 34);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (28, 64, 93);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (29, 6, 41);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (30, 100, 32);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (31, 60, 64);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (32, 23, 17);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (33, 61, 39);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (34, 2, 47);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (35, 52, 74);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (36, 76, 64);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (37, 51, 36);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (38, 95, 92);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (39, 27, 1);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (40, 87, 2);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (41, 13, 94);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (42, 58, 75);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (43, 60, 66);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (44, 38, 99);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (45, 72, 63);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (46, 59, 22);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (47, 53, 30);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (48, 97, 1);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (49, 52, 11);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (50, 57, 9);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (51, 62, 10);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (52, 80, 68);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (53, 40, 56);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (54, 4, 53);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (55, 63, 5);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (56, 97, 20);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (57, 87, 50);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (58, 25, 76);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (59, 53, 21);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (60, 35, 64);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (61, 44, 55);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (62, 13, 14);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (63, 35, 35);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (64, 40, 48);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (65, 72, 62);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (66, 13, 88);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (67, 97, 98);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (68, 93, 50);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (69, 88, 65);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (70, 88, 58);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (71, 13, 58);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (72, 75, 91);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (73, 44, 73);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (74, 23, 41);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (75, 83, 33);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (76, 85, 8);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (77, 93, 16);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (78, 84, 39);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (79, 46, 13);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (80, 21, 46);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (81, 31, 56);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (82, 67, 73);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (83, 66, 36);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (84, 65, 18);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (85, 69, 55);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (86, 68, 74);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (87, 89, 86);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (88, 50, 83);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (89, 14, 45);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (90, 90, 51);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (91, 49, 81);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (92, 81, 3);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (93, 90, 8);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (94, 100, 85);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (95, 20, 81);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (96, 23, 20);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (97, 98, 97);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (98, 44, 32);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (99, 4, 82);
+INSERT INTO `friends` (`id`, `user_id`, `friend_id`) VALUES (100, 27, 3);

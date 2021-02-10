@@ -1,21 +1,37 @@
-// const Sequelize = require('sequelize')
-// const path = require('path')
-const Mariadb = require('mariadb')
-const connection = require('./connection')
+import Sequelize from 'sequelize'
+import connection from './connection'
+import User from '../api/models/User'
 
-const pool = Mariadb.createPool(connection.development)
+const {
+  host,
+  password,
+  connectionLimit,
+  database,
+  username,
+  dialect
+} = connection.dev
 
-const database = async function asyncFunction() {
-  const conn = await pool.getConnection()
-  const rows = await conn.query('SELECT 1 as val')
+const sequelize = new Sequelize(database, username, password, {
+  host,
+  dialect,
+  operatorsAliases: '0',
+  connectionLimit
+})
 
-  console.log(rows)
-
-  const res = await conn.query('INSERT INTO myTable value (?, ?)', [
-    1,
-    'mariadb'
-  ])
-  console.log(res) // { affectedRows: 1, insertId: 1, warningStatus: 0 }
+const db = {
+  Sequelize,
+  sequelize
 }
 
-module.exports = database
+db.User = User(sequelize, Sequelize)
+
+export const dbTest = async () => {
+  try {
+    await sequelize.authenticate()
+    console.log(`Connection to ${database} on host ${host} successful!`)
+  } catch (error) {
+    console.error('Unable to connect to the database:', error)
+  }
+}
+
+export default db
