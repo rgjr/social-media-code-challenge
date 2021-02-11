@@ -12,6 +12,7 @@ Start an API Server that could be used for a social media website. This includes
 - [x] Follow REST conventions
 
 *Note: Test folder is included but not currently used as of the submission date*
+
 ---
 
 ### Install for local development
