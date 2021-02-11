@@ -1,0 +1,6 @@
+"use strict";
+
+var privateRoutes = {
+  'GET /users': 'UserController.getAll'
+};
+module.exports = privateRoutes;
