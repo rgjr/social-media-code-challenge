@@ -5,17 +5,17 @@ Start an API Server that could be used for a social media website. This includes
 - [x] Using a relational database (MySQL, Postgres), create the schema needed for users and to model the friend relationship
 - [x] Keep the user model simple. Id, firstName, and lastName is perfect
 - [ ] Create an API Endpoint for fetching users with basic pagination
-- [ ] Create an API Endpoint for fetching a user’s friends
+- [x] Create an API Endpoint for fetching a user’s friends
 - [x] Start a README with your code - Make sure that it provides the instructions to be able to run the application. 
-- [ ] Document how to test the API Endpoints, i.e. with Postman
-- [ ] Be ready to walk us through how you would write unit or integration tests
+- [x] Document how to test the API Endpoints, i.e. with Postman
 - [x] Use any routing library you feel comfortable with (i.e. Express, Koa, restify)
 - [x] Follow REST conventions
 ---
 ### Start NodeJS and MariaDB Docker Containers
 `docker-compose up -d`
-
+### Tail Docker logs
+`docker-compose logs --tail=0 --follow`
 ### API
-`localhost:3000`
+`localhost:3000/v1`
 ### MariaDB
 `localhost:3016`
