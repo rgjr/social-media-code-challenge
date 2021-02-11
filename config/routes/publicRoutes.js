@@ -9,16 +9,16 @@ publicRoutes.get('/', (req, res) => {
   res.send('UpKeep Demo v1')
 })
 
-// Retrieve all users
-publicRoutes.get('/users', users.findAll)
+// Retrieve all users with pagination
+publicRoutes.get('/users/list/:page?/:limit?/', users.findAll)
 
 // Retrieve single user
 publicRoutes.get('/users/:id', users.findUserById)
 
-// Retrieve users and their friends
-publicRoutes.get('/friends', friends.findAll)
-
 // Retrieve single user and their friends
 publicRoutes.get('/users/:id/friends', friends.findFriendsByUserId)
+
+// Retrieve users and their friends
+publicRoutes.get('/friends', friends.findAll)
 
 export default publicRoutes

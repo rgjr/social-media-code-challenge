@@ -9,7 +9,6 @@ import cors from 'cors'
  * server configuration
  */
 import config from '../config'
-// import publicRoutes from '../config/routes/publicRoutes'
 import dbService from './services/db.service'
 
 const { port, publicRoutes } = config

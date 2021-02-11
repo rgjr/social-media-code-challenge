@@ -4,11 +4,15 @@ const { users } = db
 
 // Return all data in the users table
 export const findAll = async (req, res) => {
-  console.log('FINDALL')
+  console.log('FINDALL', req.params)
+
+  const { limit: userLimit, page } = req.params
 
   await users
     .findAll({
-      attributes: { exclude: ['createdAt', 'updatedAt'] }
+      attributes: { exclude: ['createdAt', 'updatedAt'] },
+      limit: Number(userLimit),
+      offset: Number(page)
     })
     .then((userList) => {
       res.json(userList)
