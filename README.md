@@ -10,6 +10,8 @@ Start an API Server that could be used for a social media website. This includes
 - [x] Document how to test the API Endpoints, i.e. with Postman
 - [x] Use any routing library you feel comfortable with (i.e. Express, Koa, restify)
 - [x] Follow REST conventions
+
+*Note: Test folder is included but not currently used as of the submission date*
 ---
 
 ### Install for local development
