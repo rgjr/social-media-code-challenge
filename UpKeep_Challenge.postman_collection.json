@@ -23,14 +23,27 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/v1/users",
+					"raw": "localhost:3000/v1/users/list/:page/:size",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"v1",
-						"users"
+						"users",
+						"list",
+						":page",
+						":size"
+					],
+					"variable": [
+						{
+							"key": "page",
+							"value": ""
+						},
+						{
+							"key": "size",
+							"value": ""
+						}
 					]
 				},
 				"description": "Returns all users in database"
@@ -82,14 +95,27 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/v1/friends",
+					"raw": "localhost:3000/v1/friends/list/:page/:size",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
 						"v1",
-						"friends"
+						"friends",
+						"list",
+						":page",
+						":size"
+					],
+					"variable": [
+						{
+							"key": "page",
+							"value": ""
+						},
+						{
+							"key": "size",
+							"value": ""
+						}
 					]
 				},
 				"description": "Return all data inside the friends table"

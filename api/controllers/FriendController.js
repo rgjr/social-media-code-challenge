@@ -1,15 +1,24 @@
 import db from '../../config/database'
+import pagination from '../utils/pagination'
 
 const { friends } = db
 
 // Return all data in the friends table
 export const findAll = async (req, res) => {
+  const { page, size } = req.params
+  const { offset, limit } = pagination(page, size)
+
   await friends
     .findAll({
-      attributes: { exclude: ['createdAt', 'updatedAt'] }
+      attributes: { exclude: ['createdAt', 'updatedAt'] },
+      offset,
+      limit
     })
-    .then((userList) => {
-      res.json(userList)
+    .then((friendsList) => {
+      res.json({
+        count: friendsList.length,
+        friendsList
+      })
     })
     .catch((error) => res.status(400).send(error))
 }

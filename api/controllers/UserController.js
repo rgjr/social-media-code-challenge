@@ -1,29 +1,30 @@
 import db from '../../config/database'
+import pagination from '../utils/pagination'
 
 const { users } = db
 
 // Return all data in the users table
 export const findAll = async (req, res) => {
-  console.log('FINDALL', req.params)
-
-  const { limit: userLimit, page } = req.params
+  const { page, size } = req.params
+  const { offset, limit } = pagination(page, size)
 
   await users
     .findAll({
       attributes: { exclude: ['createdAt', 'updatedAt'] },
-      limit: Number(userLimit),
-      offset: Number(page)
+      offset,
+      limit
     })
     .then((userList) => {
-      res.json(userList)
+      res.json({
+        count: userList.length,
+        userList
+      })
     })
     .catch((error) => res.status(400).send(error))
 }
 
 // Return a single user by passing id
 export const findUserById = async (req, res) => {
-  console.log('FINDBYID')
-
   // Sequelize deprecated findById in favor of findByPk in v6
   await users
     .findByPk(req.params.id, {

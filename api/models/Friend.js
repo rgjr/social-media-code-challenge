@@ -1,5 +1,4 @@
 const FriendModel = (sequelize, Sequelize) => {
-  console.log('FRIEND')
   const friend = sequelize.define('friend', {
     user_id: {
       type: Sequelize.STRING
