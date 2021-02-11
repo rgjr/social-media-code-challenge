@@ -11,6 +11,9 @@ Start an API Server that could be used for a social media website. This includes
 - [x] Use any routing library you feel comfortable with (i.e. Express, Koa, restify)
 - [x] Follow REST conventions
 ---
+
+### Install for local development
+`yarn install`
 ### Start NodeJS and MariaDB Docker Containers
 `docker-compose up -d`
 ### Tail Docker logs
