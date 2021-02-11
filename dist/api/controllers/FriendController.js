@@ -61,25 +61,31 @@ exports.findAll = findAll;
 
 var findFriendsByUserId = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(req, res) {
+    var id;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _context2.next = 2;
+            id = req.params.id;
+            _context2.next = 3;
             return friends.findAll({
               attributes: {
                 exclude: ['createdAt', 'updatedAt']
               },
               where: {
-                user_id: [req.params.id]
+                user_id: [id]
               }
-            }).then(function (userList) {
-              res.json(userList);
+            }).then(function (friendsList) {
+              res.json({
+                user_id: id,
+                count: friendsList.length,
+                friendsList: friendsList
+              });
             })["catch"](function (error) {
               return res.status(400).send(error);
             });
 
-          case 2:
+          case 3:
           case "end":
             return _context2.stop();
         }

@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 var dev = {
   host: 'db',
   user: 'user',
@@ -25,8 +29,9 @@ var prod = {
   host: process.env.DB_HOST || 'localhost',
   dialect: 'mariadb'
 };
-module.exports = {
+var _default = {
   dev: dev,
   test: test,
   prod: prod
 };
+exports["default"] = _default;

@@ -26,7 +26,7 @@ const prod = {
   dialect: 'mariadb'
 }
 
-module.exports = {
+export default {
   dev,
   test,
   prod

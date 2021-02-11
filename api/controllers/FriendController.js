@@ -25,15 +25,21 @@ export const findAll = async (req, res) => {
 
 // Return all friend relationships for a user by passing id
 export const findFriendsByUserId = async (req, res) => {
+  const { id } = req.params
+
   await friends
     .findAll({
       attributes: { exclude: ['createdAt', 'updatedAt'] },
       where: {
-        user_id: [req.params.id]
+        user_id: [id]
       }
     })
-    .then((userList) => {
-      res.json(userList)
+    .then((friendsList) => {
+      res.json({
+        user_id: id,
+        count: friendsList.length,
+        friendsList
+      })
     })
     .catch((error) => res.status(400).send(error))
 }
