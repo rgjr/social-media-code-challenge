@@ -77,6 +77,26 @@
 			"response": []
 		},
 		{
+			"name": "Get friends table",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/v1/friends",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"v1",
+						"friends"
+					]
+				},
+				"description": "Return all data inside the friends table"
+			},
+			"response": []
+		},
+		{
 			"name": "Get user friends",
 			"request": {
 				"method": "GET",

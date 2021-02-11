@@ -15,23 +15,10 @@
     "dev": "node ./dist/api/api.js",
     "lint": "eslint ./api/. ./config/. ./test/.",
     "nodemon": "nodemon --watch dist --exec npm run dev ; yarn transpile",
-    "prepush": "npm test",
-    "pretest": "npm run lint",
     "start": "npm run nodemon",
-    "test": "npm run create-sqlite-db; cross-env NODE_ENV=testing jest --coverage; npm run drop-sqlite-db",
-    "test-ci": "jest --coverage --forceExit",
     "transpile-api": "babel ./api --out-dir dist/api",
     "transpile-config": "babel ./config --out-dir dist/config",
     "transpile": "echo \"\\x1b[104m\\x1b[97m\n[ Running transpile ]\n\\x1b[0m\" ; npm run transpile-api ; npm run transpile-config"
-  },
-  "jest": {
-    "globals": {
-      "__DEV__": true
-    },
-    "testEnvironment": "node",
-    "testPathIgnorePatterns": [
-      "/node_modules/"
-    ]
   },
   "babel": {
     "presets": [
