@@ -34,6 +34,7 @@ Start an API Server that could be used for a social media website. This includes
 
 ### Run from /admin folder
 `yarn start`
+
 ---
 
 ### Built With
@@ -45,3 +46,5 @@ Start an API Server that could be used for a social media website. This includes
   - https://mariadb.org/
 - Babel
   - https://babeljs.io/
+- Create React App
+  - https://reactjs.org/docs/create-a-new-react-app.html
