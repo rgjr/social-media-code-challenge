@@ -15,7 +15,7 @@ export const findAll = async (req, res) => {
       limit
     })
     .then((friendsList) => {
-      res.json({
+      res.status(200).json({
         count: friendsList.length,
         friendsList
       })
@@ -35,7 +35,7 @@ export const findFriendsByUserId = async (req, res) => {
       }
     })
     .then((friendsList) => {
-      res.json({
+      res.status(200).json({
         user_id: id,
         count: friendsList.length,
         friendsList

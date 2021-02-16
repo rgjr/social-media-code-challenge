@@ -32,13 +32,20 @@ var sequelize = new _sequelize["default"](database, username, password, {
   operatorsAliases: '0',
   connectionLimit: connectionLimit
 });
+var testConnection = new _sequelize["default"](database, username, password, {
+  host: 'localhost',
+  dialect: dialect,
+  operatorsAliases: '0',
+  connectionLimit: connectionLimit
+});
 var users = (0, _User["default"])(sequelize, _sequelize["default"]);
 var friends = (0, _Friend["default"])(sequelize, _sequelize["default"]);
 var db = {
   Sequelize: _sequelize["default"],
   sequelize: sequelize,
   users: users,
-  friends: friends
+  friends: friends,
+  testConnection: testConnection
 };
 
 var dbTest = /*#__PURE__*/function () {

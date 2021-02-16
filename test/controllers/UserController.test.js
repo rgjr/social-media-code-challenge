@@ -1,89 +1,19 @@
-const request = require('supertest')
-const {
-  beforeAction,
-  afterAction
-} = require('../setup/_setup')
-const User = require('../../api/models/User')
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+import UserMock from '../index'
 
-let api
+test('Checks if User data comes through correctly', async () => {
+  const result = await UserMock
+    .findOne('1').then((user) => user)
 
-beforeAll(async () => {
-  api = await beforeAction()
+  // check user values
+  expect(result.first_name).toBe('Tony')
+  expect(result.last_name).toBe('Montana')
 })
 
-afterAll(() => {
-  afterAction()
-})
+test('Checks that User table has data', async () => {
+  const result = await UserMock.findAndCountAll().then((count) => count)
 
-test('User | create', async () => {
-  const res = await request(api)
-    .post('/public/user')
-    .set('Accept', /json/)
-    .send({
-      email: 'martin@mail.com',
-      password: 'securepassword',
-      password2: 'securepassword'
-    })
-    .expect(200)
-
-  expect(res.body.user).toBeTruthy()
-
-  const user = await User.findByPk(res.body.user.id)
-
-  expect(user.id).toBe(res.body.user.id)
-  expect(user.email).toBe(res.body.user.email)
-
-  await user.destroy()
-})
-
-test('User | login', async () => {
-  const user = await User.create({
-    email: 'martin@mail.com',
-    password: 'securepassword'
-  })
-
-  const res = await request(api)
-    .post('/public/login')
-    .set('Accept', /json/)
-    .send({
-      email: 'martin@mail.com',
-      password: 'securepassword'
-    })
-    .expect(200)
-
-  expect(res.body.token).toBeTruthy()
-
-  expect(user).toBeTruthy()
-
-  await user.destroy()
-})
-
-test('User | get all (auth)', async () => {
-  const user = await User.create({
-    email: 'martin@mail.com',
-    password: 'securepassword'
-  })
-
-  const res = await request(api)
-    .post('/public/login')
-    .set('Accept', /json/)
-    .send({
-      email: 'martin@mail.com',
-      password: 'securepassword'
-    })
-    .expect(200)
-
-  expect(res.body.token).toBeTruthy()
-
-  const res2 = await request(api)
-    .get('/private/users')
-    .set('Accept', /json/)
-    .set('Authorization', `Bearer ${res.body.token}`)
-    .set('Content-Type', 'application/json')
-    .expect(200)
-
-  expect(res2.body.users).toBeTruthy()
-  expect(res2.body.users.length).toBe(1)
-
-  await user.destroy()
+  // check user values
+  expect(result).toBeTruthy()
 })

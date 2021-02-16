@@ -1,13 +1,10 @@
 {
-  "editor.codeActionsOnSave": null,
-    "emeraldwalk.runonsave": {
+  "emeraldwalk.runonsave": {
     "commands": [
       {
         "match": ".*",
-        "isAsync": true,
         "cmd": "yarn transpile"
       },
     ]
   }
-
 }

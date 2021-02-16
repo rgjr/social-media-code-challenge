@@ -1,6 +1,6 @@
 {
   "extends": "airbnb-base",
-  "plugins": ["import"],
+  "plugins": ["import", "jest"],
   "rules": {
     "arrow-parens": ["error", "always"],
     "comma-dangle": ["error", "never"],
@@ -8,6 +8,6 @@
     "no-console": "off"
   },
   "env": {
-    "jest": true
-  }
+    "jest/globals": true
+}
 }

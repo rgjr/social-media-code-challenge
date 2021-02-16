@@ -7,7 +7,7 @@ const publicRoutes = Router()
 
 // Heartbeat
 publicRoutes.get('/', (req, res) => {
-  res.send('UpKeep Demo v1')
+  res.status(200).send('UpKeep Demo v1')
 })
 
 // Retrieve all users with pagination
@@ -21,5 +21,11 @@ publicRoutes.get('/users/:id/friends', friends.findFriendsByUserId)
 
 // Retrieve users and their friends
 publicRoutes.get('/friends/list/:page?/:size?', friends.findAll)
+
+publicRoutes.get('*', (req, res) => {
+  res.status(400).json({
+    message: 'invalid route'
+  })
+})
 
 export default publicRoutes

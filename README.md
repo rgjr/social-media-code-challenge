@@ -14,8 +14,8 @@ Start an API Server that could be used for a social media website. This includes
 *Note: Test folder is included but not currently used as of the submission date*
 
 ---
-
-### Install for local development
+## Backend App
+### Install backend for local development
 `yarn install`
 ### Start NodeJS and MariaDB Docker Containers
 `docker-compose up -d`
@@ -28,6 +28,12 @@ Start an API Server that could be used for a social media website. This includes
 ### MariaDB
 `localhost:3016`
 
+## Frontend App
+### Install for local development
+`cd admin && yarn install`
+
+### Run from /admin folder
+`yarn start`
 ---
 
 ### Built With

@@ -14,8 +14,10 @@ export const findAll = async (req, res) => {
       offset,
       limit
     })
-    .then((userList) => {
-      res.json({
+    .then(async (userList) => {
+      const total = await users.count().then((result) => result)
+      res.status(200).json({
+        total,
         count: userList.length,
         userList
       })
@@ -31,7 +33,7 @@ export const findUserById = async (req, res) => {
       attributes: { exclude: ['createdAt', 'updatedAt'] }
     })
     .then((user) => {
-      res.json(user)
+      res.status(200).json(user)
     })
     .catch((error) => res.status(400).send(error))
 }

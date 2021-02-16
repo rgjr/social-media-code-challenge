@@ -19,6 +19,13 @@ const sequelize = new Sequelize(database, username, password, {
   connectionLimit
 })
 
+const testConnection = new Sequelize(database, username, password, {
+  host: 'localhost',
+  dialect,
+  operatorsAliases: '0',
+  connectionLimit
+})
+
 const users = UserModel(sequelize, Sequelize)
 const friends = FriendModel(sequelize, Sequelize)
 
@@ -26,7 +33,8 @@ const db = {
   Sequelize,
   sequelize,
   users,
-  friends
+  friends,
+  testConnection
 }
 
 export const dbTest = async () => {

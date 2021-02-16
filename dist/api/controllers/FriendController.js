@@ -35,7 +35,7 @@ var findAll = /*#__PURE__*/function () {
               offset: offset,
               limit: limit
             }).then(function (friendsList) {
-              res.json({
+              res.status(200).json({
                 count: friendsList.length,
                 friendsList: friendsList
               });
@@ -76,7 +76,7 @@ var findFriendsByUserId = /*#__PURE__*/function () {
                 user_id: [id]
               }
             }).then(function (friendsList) {
-              res.json({
+              res.status(200).json({
                 user_id: id,
                 count: friendsList.length,
                 friendsList: friendsList
