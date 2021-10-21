@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.findUserById = exports.findAll = void 0;
+exports.findUserById = exports.findAll = exports["default"] = void 0;
 
 var _database = _interopRequireDefault(require("../../config/database"));
 
